@@ -1,0 +1,51 @@
+.posts{
+    @extend .clearfix;
+    @extend .container;
+    position: relative;
+    .post--item{
+        border-bottom: 1px solid $light_grey;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        min-width: 347px;
+        @include column(4/12, $cycle: 3);
+
+        @include screen('tablet'){
+            @include column(6/12, $cycle: 2);
+        }
+        
+        @include screen('mobile'){
+            @include column(12/12);
+        }        
+        
+        .post--title{
+            font-size: 48px;
+            line-height: 48px;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        
+        .post--img{
+            margin-bottom: 40px;
+            width: 100%;
+            img{
+                min-width: 100%;
+                width: 100%;
+            }
+        }
+
+        .post--date{
+            margin-bottom: 30px;
+            color: $grey;
+            font-size: 11px;
+        }
+
+        .post--presenter{
+            color: $black;
+            font-family: $author_font;
+            font-size: 14px;
+            a{
+                text-transform: uppercase;
+            }
+        }
+    }
+}

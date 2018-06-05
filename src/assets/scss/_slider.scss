@@ -1,0 +1,111 @@
+.home--slider{
+    margin-bottom: 100px;
+    @include center(1440px);
+    .slides{
+        position: relative;
+        @extend .clearfix;
+        .slide--item{
+            position: relative;
+            color: $white;
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+            .container{
+            position: absolute;
+            top: 60%; left: 8%;
+            @include translateY(-50%);
+
+            @include screen('tablet'){
+
+            }
+            }
+            .slide--content{
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100%;
+                margin: auto;
+            }
+            .slide--title{
+                font-size: 68px;
+                color: $white;
+                line-height: 68px;
+                margin: 0 0 25px 0;
+                width: 65%;
+                @include screen('tablet'){
+                    font-size: 48px;
+                    line-height: 1;
+                }
+                @include screen('mobile'){
+                    font-size: 28px;
+                    line-height: 1;
+                    margin-bottom: 5px;
+                    width: 90%;
+                }
+            }
+            .slide--date{
+                font-size: 30px;
+                margin-bottom: 25px;
+                @include screen('tablet'){
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                    line-height: 1;
+                }
+                @include screen('mobile'){
+                    font-size: 18px;
+                    width: 90%;
+                    margin: 5px 0;
+                }
+            }
+            .slide--description{
+                width: 40%;
+                margin-top: 20px;
+                font-family: $title_font;
+                font-size: 14px;
+                letter-spacing: 1px;
+                @include screen('tablet'){
+                    width: 90%;
+                }
+                @include screen('mobile'){
+                    width: 90%;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    /////SLIDER NAV
+    .slick-dots{
+        margin-bottom: -10px;
+        li{
+            height: 30px;
+            width: 30px;
+            margin: 0 5px;
+            color: #e1e1e1;
+            button{
+                @include transition(color .3s);
+                &:before{
+                    font-size: 14px;
+                    color: #e1e1e1;
+                    height: 30px;
+                    width: 30px;
+                    line-height: 30px;
+                    @include transition(color .3s);
+                }
+                &:hover{
+                    color: #c8c8c8;
+                    @include transition(color .3s);
+                }
+            }
+            &.slick-active{
+                button{
+                    &:before{
+                        color: #c8c8c8;
+                        @include transition(color .3s);
+                    }
+                }
+            }
+        }
+    }
+}

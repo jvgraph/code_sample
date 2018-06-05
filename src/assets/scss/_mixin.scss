@@ -1,0 +1,38 @@
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+        -moz-transform: translateY($e);
+            transform: translateY($e);
+}
+
+@mixin transition($e){
+    -webkit-transition: $e;
+        -moz-transition: $e;
+             transition: $e;
+}
+
+//MEDIA QUERIES
+@mixin screen($size) {
+  $desktop: "(min-width: 1024px)";
+  $tablet: "(min-width: 768px) and (max-width: 1023px)";
+  $mobile: "(max-width: 767px)";
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@font-face{
+    font-family:  'CaslonPro';
+    src: url('/./../../assets/fonts/ACaslonPro.otf');
+}
+@font-face{
+    font-family: 'Springville';
+    src: url('/./../../assets/fonts/Springville-Regular3.otf');
+}
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+     -webkit-font-smoothing: antialiased !important;
+}
+body{
+    margin: 0;
+    padding: 120px 0 0 0;
+    font-size: 11px;
+    line-height: 1;
+    @include transition(padding-top .5s);
+    @include screen('mobile'){
+        padding-top: 50px;
+        @include transition(padding-top .5s);
+    }
+}
+a{
+    color: $black;
+    text-decoration: none;
+    @include transition(.3s);
+    &:hover{
+        color: $grey;
+        @include transition(.3s);
+    }
+}
+
+h1, h2, h3{
+    font-family: $title_font;
+    font-weight: normal;
+}
+ul, ol, dl, ul li, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/////clearfix
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+////
+.container{
+    @include center(1162px);
+    position: relative;
+    padding: 0 10px;
+    @extend .clearfix;
+}

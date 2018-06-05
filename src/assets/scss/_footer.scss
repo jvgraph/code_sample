@@ -1,0 +1,14 @@
+footer{
+    padding-bottom: 70px;
+    margin-top: 150px;
+    @include screen('mobile'){
+        margin-top: 70px;
+        padding-bottom: 40px;
+    }
+    .site--info{
+        @extend .container;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
+}
